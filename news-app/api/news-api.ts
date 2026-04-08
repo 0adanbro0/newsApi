@@ -2,7 +2,7 @@ async function Api() {
 
   const _apiKey = import.meta.env.VITE_API_KEY
   console.log(_apiKey)
-  const _url = `https://newsapi.org/v2/everything?q=everything&apiKey=${_apiKey}`;
+  const _url = `https://newsapi.org/v2/everything?q=programming&apiKey=${_apiKey}`;
   try {
 
     const response = await fetch(_url);
@@ -11,7 +11,7 @@ async function Api() {
     }
 
     const result = await response.json();
-    return result.articles[1]
+    return result.articles
 
   } catch (error: unknown) {
 
