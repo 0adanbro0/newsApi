@@ -1,26 +1,30 @@
-import { useState} from 'react'
+import './Cards.css'
 
-interface CardsProps{
-    author?:string,
-    content?:string
-    url:string
-    title?:string
-    publishedAt?:string
+interface CardsProps {
+    author?         : string,
+    content?        : string,
+    url             : string | null,
+    title?          : string,
+    publishedAt?    : string,
+    timeMode        : string,
+    urlToPost       : string
 }
 
-
-const Cards = ({publishedAt = 'dont know', author = 'by noname', content = 'content not found!', url, title = 'title not found!'}:CardsProps)=>{
-    const [urlcontent, setUrlContent] = useState(url)
+const Cards = ({urlToPost, timeMode, publishedAt = 'dont know', author = 'by noname', content = 'content not found!', url, title = 'title not found!'}:CardsProps)=>{
     return(
-        <div>
+        <div className="news-card">
             <img
-                src={urlcontent}
-                onError={()=>{setUrlContent(`https://tiven.kz/noimage.jpg`)}}
+                src={url || 'https://tiven.kz/noimage.jpg'} className="card-image"
             />
-            <h1>{title}</h1>
-            <p className={`author`}>{author}</p>
-            <div>{content}</div>
-            <p>{publishedAt}</p>
+            <div className={`card-content`} id={timeMode}>
+                <h1 className="card-title" id={timeMode}>{title}</h1>
+                <a className='source' href={urlToPost} target="_blank" rel="noopener noreferrer">open this news</a>
+                <div className="card-description" id={timeMode}>{content}</div>
+                <div className='info-authorData'>
+                    <p className="card-author">{author}</p>
+                    <p className="card-date">{publishedAt}</p>
+                </div>
+            </div>
         </div>
     )
 }

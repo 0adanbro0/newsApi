@@ -1,8 +1,8 @@
-async function Api() {
+async function Api(prompt:string) {
 
   const _apiKey = import.meta.env.VITE_API_KEY
   console.log(_apiKey)
-  const _url = `https://newsapi.org/v2/everything?q=programming&apiKey=${_apiKey}`;
+  const _url = `https://newsapi.org/v2/everything?q=${prompt}&language=ru&sortBy=publishedAt&apiKey=${_apiKey}`;
   try {
 
     const response = await fetch(_url);
