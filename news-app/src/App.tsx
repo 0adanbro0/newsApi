@@ -37,9 +37,8 @@ function App() {
     <div className={`main`} id={timeMode}>
       <div className='center-block'>
 
-        <div className="menu">
+        <div className="menu-container">
           <input value={valuePrompt} type="text" onChange={ (e)=> { setValuePrompt( e.target.value ) } }/>
-
           <button className={`throwPrompt`} onClick={()=>{setThrowPrompt(valuePrompt)}}>send</button>
 
           <button className={`throwPrompt`} onClick={()=>{setThrowPrompt('последнее')}}>последнее</button>
