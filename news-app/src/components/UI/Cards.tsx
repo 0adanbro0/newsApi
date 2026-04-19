@@ -18,7 +18,9 @@ const Cards = ({urlToPost, timeMode, publishedAt = 'dont know', author = 'by non
             />
             <div className={`card-content`} id={timeMode}>
                 <h1 className="card-title" id={timeMode}>{title}</h1>
-                <a className='source' href={urlToPost} target="_blank" rel="noopener noreferrer">open this news</a>
+                <div className='info-source'>
+                    <a className='source' href={urlToPost} target="_blank" rel="noopener noreferrer">open this news</a>
+                </div>
                 <div className="card-description" id={timeMode}>{content}</div>
                 <div className='info-authorData'>
                     <p className="card-author">{author}</p>

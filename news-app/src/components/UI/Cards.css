@@ -69,6 +69,13 @@
     transition: 1s;
 }
 
+.info-source{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--bg-hover);
+}
+
 .source:hover{
     transform: 1s;
     letter-spacing: 2px;

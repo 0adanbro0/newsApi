@@ -1,16 +1,16 @@
-interface Button{
+interface ButtonMenu{
     content   : string,
-    onclick   : ()=>void,
+    onclick   : (arg:string)=>void,
     className : string,
-    timeMode  : string,
+    prompt    : string
 }
 
-const Button = ({content, onclick, className, timeMode}:Button)=>{
+const ButtonMenu = ({content, onclick, className, prompt}:ButtonMenu)=>{
     return(
         <>
-            <button onClick={onclick} className={`button ${className} ${timeMode}`}>{content}</button>
+            <button onClick={() => onclick(prompt)} className={`button ${className}`}>{content}</button>
         </>
     )
 }
 
-export default Button
+export default ButtonMenu
