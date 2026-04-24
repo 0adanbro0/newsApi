@@ -20,9 +20,16 @@ This project is fully Dockerized for easy setup. You don't need to install Node.
 - First of all get your SECRET api key: go on source (https://newsapi.org/), sign in and get the key.
 - Secondly, open cmd and put in the next command.
 ```bash
-$ docker build --build-arg VITE_API_KEY="your_key" -t news-site .
+$ docker build --platform linux/amd64 --build-arg VITE_API_KEY="your_key" -t news-site .
 ```
 - Finally, put in the next command and get relax
 ```bash
 $ docker run -d -p 8080:80 --name news-container news-site
+```
+- If you wonna open this website after 5 years
+```bash
+$ docker save news-site > news-site.tar
+
+$ docker load -i news-site.tar
+$ docker run -d -p 80:80 news-site
 ```
