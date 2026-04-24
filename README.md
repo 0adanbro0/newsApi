@@ -28,7 +28,7 @@ $ docker run -d -p 8080:80 --name news-container news-site
 ```
 - If you wonna open this website after 5 years
 ```bash
-$ docker save news-site > news-site.tar
+$ docker save -o news-site.tar news-site
 
 $ docker load -i news-site.tar
 $ docker run -d -p 80:80 news-site
