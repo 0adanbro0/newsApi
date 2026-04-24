@@ -8,8 +8,12 @@
 - The fastest nowadays Vite never make you wait.
 - The most popular api source, newsApi - get any news for each preferences
 
+---
+
 ### Docker deployment
 This project is fully Dockerized for easy setup. You don't need to install Node.js locally — just Docker.
+
+---
 
 ### How to create docker image with ready secret api keys?
 
