@@ -1,0 +1,23 @@
+services:
+  news-website:
+
+    platform: linux/amd64
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - VITE_API_KEY=${VITE_API_KEY}
+    
+    image: news-website:v1.0
+
+    container_name: news-container
+
+    ports:
+      - "8080:80"
+
+    restart: no
+
+    environment:
+      - VITE_API_KEY=${VITE_API_KEY}
+    

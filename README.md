@@ -18,18 +18,25 @@ This project is fully Dockerized for easy setup. You don't need to install Node.
 ### How to create docker image with ready secret api keys?
 
 - First of all get your SECRET api key: go on source (https://newsapi.org/), sign in and get the key.
-- Secondly, open cmd and put in the next command.
-```bash
-$ docker build --platform linux/amd64 --build-arg VITE_API_KEY="your_key" -t news-site .
-```
+- Secondly, setup new .env file and write there your key.
 - Finally, put in the next command and get relax
 ```bash
-$ docker run -d -p 8080:80 --name news-container news-site
+$ cd news-app
+$ docker compose up --build
+```
+- If you wanna restart or stop website
+```bash
+$ docker compose stop
+$ docker compose restart
+```
+- To delete containers
+```bash
+$ docker compose down
 ```
 - If you wonna open this website after 5 years
 ```bash
 $ docker save -o news-site.tar news-site
 
 $ docker load -i news-site.tar
-$ docker run -d -p 80:80 news-site
+$ docker compose up --build
 ```
